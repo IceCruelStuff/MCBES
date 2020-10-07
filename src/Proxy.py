@@ -55,14 +55,5 @@ class Proxy:
             while ticking:
                 time.sleep(0.002)
 
-
-def command(string, fromConsole):
-    if string.lower() == 'stop':
-        logger.log('info', 'Stopping proxy...')
-        Utils.killServer()
-    elif string.lower() == '':
-        pass
-    elif string.lower() == 'help':
-        logger.log('info', '/stop: Stops the proxy')
-    else:
-        logger.log('error', str(base.get("invalidCommand")))
+    def sendMessage(self, message):
+        self.getLogger().log("info", message)
